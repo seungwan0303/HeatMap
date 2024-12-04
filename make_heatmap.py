@@ -3,7 +3,9 @@ import numpy as np
 import matplotlib.pyplot as plt
 import json
 
-from scipy.ndimage import gaussian_laplace
+# name = Class Number
+# Point = Pixel Location (x, y, Img-num)
+# Scale = Real Distance
 
 h, w = 2400, 2880
 std = 10
@@ -31,10 +33,10 @@ def Laplace(center, sigmaD=None):  # Gaussian Filter
 
 
 if __name__ == "__main__":
-    with open ('train-gt.json') as f:
-        data =json.load(f)
-        print(type(data))
+    with open ("train-gt.json", "r", encoding="UTF-8") as train:
+        data =json.load(train)
+        print(data)
 
-    Laplace(data, )
+    # Laplace(data, )
 
 

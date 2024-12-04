@@ -1,5 +1,4 @@
 {
-# name = Class Number / Point = Pixel Location (x, y, Img-num) / Scale = Real Distance
     "name": "Orthodontic landmarks",
     "type": "Multiple points",
     "points": [
