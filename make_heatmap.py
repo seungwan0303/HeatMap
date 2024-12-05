@@ -34,9 +34,18 @@ def Laplace(center, sigmaD=None):  # Gaussian Filter
 
 if __name__ == "__main__":
     with open ("train-gt.json", "r", encoding="UTF-8") as train:
-        data =json.load(train)
-        print(data)
+        data = json.load(train) # json file load
+        pixel = data["points"] # json 중 "points" 부분만 추출
+        # print(pixel)
+        for point in pixel:
+            # print(point['point'])
+            class_num = point["name"] # "points" 중에서 class값만 추출
+            label = point['point'] # "points" 중에서 좌표값만 추출
+            # print(label)
+            Laplace(label)
 
-    # Laplace(data, )
-
-
+# plt.pcolor(Laplace())
+# plt.colorbar()
+# plt.xlabel('X')
+# plt.ylabel('Y')
+# plt.show()
