@@ -34,9 +34,19 @@ def Laplace(center, sigmaD=None):  # Gaussian Filter
 
 if __name__ == "__main__":
     with open ("train-gt.json", "r", encoding="UTF-8") as train:
-        data =json.load(train)
-        print(data)
+        data = json.load(train)
+        pixel = data["points"]
+        # print(pixel)
+        for point in pixel:
+            # print(point['point'])
+            label = point['point']
+            # print(label)
+            for k in label:
+                Laplace(k)
 
-    # Laplace(data, )
 
-
+plt.imshow(u, cmap='jet', origin='lower', extent=[0, L, 0, L])
+plt.colorbar()
+plt.xlabel('x')
+plt.ylabel('y')
+plt.show()
